@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/system";
+import BmiBox from "./Component/Bmi-box";
+import GlobalStyles from "./container/material ui/Global-style";
+import SelectGender from "./container/material ui/SelectGander";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyles/>
+      <Box sx={{display:'flex', mt: 10}}>
+      <BmiBox title="BMI CALCULATOR" gender={<SelectGender/>}/>
+      <BmiBox title="BMI RESULT" />
+      </Box>
     </div>
   );
 }
