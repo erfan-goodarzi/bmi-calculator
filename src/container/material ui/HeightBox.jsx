@@ -14,7 +14,7 @@ export default function HeightBox() {
         color: "#6799b0",
         background: " #EDEDED",
         boxShadow: "3px 5px 7px 1px #908d9e80, -4px -2px 6px 2px #ffffff",
-        height: "49vh",
+        height: "55vh",
       }}
     >
       <Box
