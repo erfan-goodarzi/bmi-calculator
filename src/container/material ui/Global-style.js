@@ -5,15 +5,18 @@ const useStyles = makeStyles(() =>
     "@global": {
       body: {
         background: "#E9E9E9 !important",
-        fontFamily: "Nunito !important"
+        fontFamily: "Nunito !important",
       },
-      '*': {
-        fontFamily: 'Nunito !important',
-        textTransform: 'capitalize !important'
+      "*": {
+        fontFamily: "Nunito !important",
+        textTransform: "capitalize !important",
       },
-      '.MuiButton-root': {
-        fontSize: '1rem',
-      }
+      ".MuiButton-root": {
+        fontSize: "1rem",
+      },
+      ".MuiSlider-thumb": {
+        background: "#57cedd  !important",
+      },
     },
   })
 );

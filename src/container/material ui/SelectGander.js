@@ -5,11 +5,12 @@ export default function SelectGender() {
   return (
     <Box  sx={{margin:' 3rem 1rem',width: '100%'}}>
       <Button
+ 
         
       sx={{
         background: 'linear-gradient(45deg, #59C7E2, #56CFDB)',
-        margin: "6px 10px", 
-        padding: '10px 50px',
+        margin: "6px 9px", 
+        padding: '10px 56px',
         fontSize: '14px',
         borderRadius: '14px',
         color: '#EDEDED',
@@ -24,8 +25,8 @@ export default function SelectGender() {
       <Button
         sx={{
           background: '#EDEDED',
-          padding: '10px 50px',
-          margin: "6px 10px", 
+          padding: '10px 56px',
+          margin: "6px 17px", 
           fontSize: '14px',
           borderRadius: '14px',
           color: '#A8ACB9',
