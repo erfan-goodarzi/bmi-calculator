@@ -4,14 +4,14 @@ export default function BmiBox(props) {
   return (
     <Box
       sx={{
-        width: 335,
+        width: 363,
         marginLeft: "21rem",
         marginRight: "-10rem",
         borderRadius: "14px",
         color: "#6799b0",
-        background: " #d1e6ec",
+        background: " #EDEDED",
         boxShadow: "5px 5px 49px #a1b1b6, -5px -5px 49px #ffffff",
-        height: "79vh",
+        height: "85vh",
       }}
     >
       <Box

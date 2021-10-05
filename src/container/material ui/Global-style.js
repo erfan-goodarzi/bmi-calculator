@@ -4,9 +4,16 @@ const useStyles = makeStyles(() =>
   createStyles({
     "@global": {
       body: {
-        background: "#d1e0ec !important",
-        
+        background: "#E9E9E9 !important",
+        fontFamily: "Nunito !important"
       },
+      '*': {
+        fontFamily: 'Nunito !important',
+        textTransform: 'capitalize !important'
+      },
+      '.MuiButton-root': {
+        fontSize: '1rem',
+      }
     },
   })
 );

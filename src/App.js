@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles/>
-      <Box sx={{display:'flex', mt: 10}}>
+      <Box sx={{display:'flex', mt: 7}}>
       <BmiBox title="BMI CALCULATOR" gender={<SelectGender/>}/>
       <BmiBox title="BMI RESULT" />
       </Box>
