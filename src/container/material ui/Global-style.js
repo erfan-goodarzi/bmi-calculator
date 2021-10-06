@@ -17,6 +17,10 @@ const useStyles = makeStyles(() =>
       ".MuiSlider-thumb": {
         background: "#57cedd  !important",
       },
+     ".MuiButtonBase-root.MuiToggleButton-root.Mui-selected.MuiToggleButton-warning":{
+       color: '#0be9ff',
+       background: '#6799b0c7'
+     }
     },
   })
 );
@@ -28,3 +32,6 @@ const GlobalStyles = () => {
 };
 
 export default GlobalStyles;
+
+
+ 

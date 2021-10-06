@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 
-export default function BmiBox(props) {
+export default function BmiBox({ title, gender, age, weight, height, cal }) {
   return (
     <Box
       sx={{
@@ -11,7 +11,7 @@ export default function BmiBox(props) {
         color: "#6799b0",
         background: " #EDEDED",
         boxShadow: "5px 5px 49px #a1b1b6, -5px -5px 49px #ffffff",
-        height: "90vh",
+        height: "92vh",
       }}
     >
       <Box
@@ -22,14 +22,17 @@ export default function BmiBox(props) {
           mt: "31px",
         }}
       >
-        {props.title}{" "}
+        {title}{" "}
       </Box>
-      <Box>{props.gender}</Box>
-      <Box sx={{ display: "flex" }}>
-        <Box>{props.height}</Box>
-        <Box>{props.age}</Box>
+      <Box>{gender}</Box>
+      <Box sx={{ display: "flex", mt: '40px' }}>
+        <Box>{height}</Box>
+        <Box sx={{ display: "grid" }}>
+          <Box>{age}</Box>
+          <Box>{weight}</Box>
+        </Box>
       </Box>
-  
+      <Box>{cal}</Box>
     </Box>
   );
 }
