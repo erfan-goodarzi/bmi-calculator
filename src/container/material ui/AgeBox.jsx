@@ -1,7 +1,8 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-export const AgeBox = (props) => {
+
+export const AgeBox = props => {
   return (
     <div>
       <Box
@@ -84,7 +85,7 @@ export const AgeBox = (props) => {
   );
 };
 
-export const WeightBox = (props) => {
+export const WeightBox = props => {
   return (
     <div>
       <Box

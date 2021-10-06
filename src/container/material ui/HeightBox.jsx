@@ -4,7 +4,7 @@ import Slider from "@mui/material/Slider";
 
 
 
-export default function HeightBox() {
+export default function HeightBox({height,HeightHandler}) {
   return (
     <Box
       sx={{
@@ -38,12 +38,14 @@ export default function HeightBox() {
         }}
         aria-label="Temperature"
         defaultValue={140}
+        value={height}
         valueLabelDisplay="auto"
         orientation="vertical"
         step={2}
         marks
         min={110}
         max={240}
+        onChange={HeightHandler}
       />
     
     </Box>

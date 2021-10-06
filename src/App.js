@@ -2,10 +2,9 @@ import { Box } from "@mui/system";
 import BmiBox from "./Component/Bmi-box";
 
 import GlobalStyles from "./container/material ui/Global-style";
-import HeightBox from "./container/material ui/HeightBox";
 import SelectGender from "./container/material ui/SelectGander";
 import CalButton from "./container/material ui/CalButton";
-import { PersonAge, PersonWeight } from "./Component/PersonInfo";
+import PersonInfo from "./Component/PersonInfo";
 
 function App() {
   
@@ -16,9 +15,7 @@ function App() {
         <BmiBox
           title="BMI CALCULATOR"
           gender={<SelectGender />}
-          height={<HeightBox />}
-          age={<PersonAge/>}
-          weight={<PersonWeight/>}
+          personInfo={<PersonInfo/>}
           cal={<CalButton />}
         />
         <BmiBox title="BMI RESULT" />
