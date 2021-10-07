@@ -2,13 +2,15 @@ import Box from "@mui/material/Box";
 import { useEffect, useState, useRef } from "react";
 import { AgeBox, WeightBox } from "../container/material ui/AgeBox";
 import HeightBox from "../container/material ui/HeightBox";
-
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import CalButton from "../container/material ui/CalButton";
 
 export default function BmiBox({ gender, cal }) {
-  const [age, setAge] = useState(13);
-  const [Weight, setWeight] = useState(66);
+  const [age, setAge] = useState(17);
+  const [Weight, setWeight] = useState(69);
   const [Height, setHeight] = useState(175);
-  const infoRef = useRef(null);
+  const infoRef = useRef(22.53);
 
   const GetHeight = (e) => {
     setHeight(e.target.value);
@@ -25,11 +27,11 @@ export default function BmiBox({ gender, cal }) {
       setWeight(Weight - 1);
     }
   };
-
-  useEffect(() => {
-    infoRef.current = <p> {((Weight / Height / Height) * 10000).toFixed(2)}</p>;
-  }, [age, Weight, Height]);
-
+  // useEffect(() => {
+    
+  // }, [Height, Weight, age]);
+  infoRef.current = (Weight / ((Height * Height) / 10000)).toFixed(2);
+  
   const AgeIncrementHandler = () => {
     if (age < 100) {
       setAge(age + 1);
@@ -64,7 +66,7 @@ export default function BmiBox({ gender, cal }) {
             mt: "31px",
           }}
         >
-        BMI CALCULATOR
+          BMI CALCULATOR
         </Box>
         <Box>{gender}</Box>
         <Box>
@@ -92,10 +94,11 @@ export default function BmiBox({ gender, cal }) {
             </Box>
           </Box>
         </Box>
-        <Box>{cal}</Box>
+        <Box>
+          <CalButton />
+        </Box>
       </Box>
-   
-   
+
       <Box
         sx={{
           width: 383,
@@ -116,9 +119,13 @@ export default function BmiBox({ gender, cal }) {
             mt: "31px",
           }}
         >
-         BMI RESULT
+          BMI RESULT
         </Box>
-        {infoRef.current}
+        <CircularProgressbar
+          ref={infoRef}
+          value={infoRef.current}
+          text={`${infoRef.current}%`}
+        />
       </Box>
     </Box>
   );

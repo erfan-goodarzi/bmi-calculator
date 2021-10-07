@@ -1,10 +1,11 @@
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
-export default function CalButton() {
+export default function CalButton({CalClicked}) {
   return (
     <Box>
       <Button
+      onClick={CalClicked}
         sx={{
           background: "linear-gradient(85deg, #3bcaed, #56cedc)",
           margin: "56px 21px",
