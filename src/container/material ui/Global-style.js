@@ -20,7 +20,11 @@ const useStyles = makeStyles(() =>
      ".MuiButtonBase-root.MuiToggleButton-root.Mui-selected.MuiToggleButton-warning":{
        color: '#0be9ff',
        background: '#6799b0c7'
-     }
+     },
+     ".CircularProgressbar ":{
+      width: "85%",
+      margin: "13px 14px",
+     },
     },
   })
 );

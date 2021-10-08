@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import { useEffect, useState, useRef } from "react";
 import { AgeBox, WeightBox } from "../container/material ui/AgeBox";
 import HeightBox from "../container/material ui/HeightBox";
-import { CircularProgressbar } from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import CalButton from "../container/material ui/CalButton";
 
@@ -28,10 +28,10 @@ export default function BmiBox({ gender, cal }) {
     }
   };
   // useEffect(() => {
-    
+
   // }, [Height, Weight, age]);
   infoRef.current = (Weight / ((Height * Height) / 10000)).toFixed(2);
-  
+
   const AgeIncrementHandler = () => {
     if (age < 100) {
       setAge(age + 1);
@@ -121,12 +121,36 @@ export default function BmiBox({ gender, cal }) {
         >
           BMI RESULT
         </Box>
-        <CircularProgressbar
-          ref={infoRef}
-          value={infoRef.current}
-          text={`${infoRef.current}%`}
-        />
+        <Box
+          sx={{
+            width: 176,
+            margin: "146px 24px 49px 107px",
+            borderRadius: "50%",
+            color: "#6799b0",
+            background: " #EDEDED",
+            boxShadow: "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
+            height: 176,
+          }}
+        >
+          <CircularProgressbar
+            maxValue={40}
+            ref={infoRef}
+            value={infoRef.current}
+            text={infoRef.current}
+            styles={buildStyles({
+              textColor: "#7ca4b7",
+              pathColor: "#4fcde0",
+              trailColor: "#DADFE6",
+              root: {
+                width: "44%",
+                margin: "10rem 7rem",
+              },
+            })}
+          />
+        </Box>
       </Box>
     </Box>
   );
 }
+
+
