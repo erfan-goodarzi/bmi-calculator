@@ -5,6 +5,7 @@ import HeightBox from "../container/material ui/HeightBox";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import CalButton from "../container/material ui/CalButton";
+import BmiModal from "../container/material ui/Modal";
 
 export default function BmiBox({ gender }) {
   const [age, setAge] = useState(23);
@@ -222,7 +223,7 @@ export default function BmiBox({ gender }) {
         <Box
           sx={{
             width: 176,
-            margin: "65px 24px 49px 107px",
+            margin: "32px 24px 49px 107px",
             borderRadius: "50%",
             color: "#6799b0",
             background: " #EDEDED",
@@ -247,7 +248,7 @@ export default function BmiBox({ gender }) {
             })}
           />
         </Box>
-        <Box sx={{ textAlign: "center", fontSize: "17px", fontWeight: "500" }}>
+        <Box sx={{ textAlign: "center", fontSize: "17px", fontWeight: "500" , marginTop: '-22px'}}>
           You have{" "}
           <span style={{ fontWeight: "700", color: "#4fcde0" }}>
             {infoRef.current <= 16
@@ -296,6 +297,7 @@ export default function BmiBox({ gender }) {
         >
           {sugBmi}
         </Box> : null}
+        <BmiModal/>
       </Box>
     </Box>
   );
