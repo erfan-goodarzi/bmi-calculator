@@ -1,10 +1,13 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import { useSelector,useDispatch } from "react-redux";
+import { Height } from "../../features/BmiSlice";
 
 
 
-
-export default function HeightBox({height,HeightHandler}) {
+export default function HeightBox() {
+  const BmiHeight = useSelector(state => state.bmi.height);
+  const dispatch = useDispatch()
   return (
     <Box
       sx={{
@@ -38,14 +41,14 @@ export default function HeightBox({height,HeightHandler}) {
         }}
         aria-label="Temperature"
         defaultValue={140}
-        value={height}
+        value={BmiHeight}
         valueLabelDisplay="auto"
         orientation="vertical"
         step={2}
         marks
         min={110}
         max={240}
-        onChange={HeightHandler}
+        onChange={(e) => dispatch(Height(e.target.value))}
       />
     
     </Box>

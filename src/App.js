@@ -10,6 +10,7 @@ function App() {
       <GlobalStyles />
 
       <BmiBox gender={<SelectGender />} />
+  
     </div>
   );
 }

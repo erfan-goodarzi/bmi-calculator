@@ -1,8 +1,12 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import { useSelector,useDispatch } from "react-redux";
+ import { Ageincrement,Agedecrement, Weightdecrement, Weightincrement } from "../../features/BmiSlice";
 
 
-export const AgeBox = props => {
+export const AgeBox = () => {
+  const BmiAge = useSelector(state => state.bmi.age);
+  const dispatch = useDispatch();
   return (
     <div>
       <Box
@@ -45,7 +49,7 @@ export const AgeBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.AgeIncrementHandler}
+            onClick={() => dispatch(Ageincrement())}
           >
             +
           </Button>
@@ -56,8 +60,8 @@ export const AgeBox = props => {
               color: "#59c7e2 !important",
             }}
             disabled
-          >
-            {props.age}
+            >
+            {BmiAge}
           </Button>
           <Button
             sx={{
@@ -75,8 +79,8 @@ export const AgeBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.AgeDecrementHandler}
-          >
+            onClick={() => dispatch(Agedecrement())}
+            >
             -
           </Button>
         </Box>
@@ -85,7 +89,9 @@ export const AgeBox = props => {
   );
 };
 
-export const WeightBox = props => {
+export const WeightBox = () => {
+  const BmiWeight = useSelector((state) => state.bmi.weight);
+  const dispatch = useDispatch();
   return (
     <div>
       <Box
@@ -128,7 +134,7 @@ export const WeightBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.WeightIncrementHandler}
+            onClick={() => dispatch(Weightincrement())}
           >
             +
           </Button>
@@ -140,7 +146,7 @@ export const WeightBox = props => {
             }}
             disabled
           >
-            {props.Weight}
+            {BmiWeight}
           </Button>
           <Button
             sx={{
@@ -158,7 +164,7 @@ export const WeightBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.WeightDecrementHandler}
+            onClick={() => dispatch(Weightdecrement())}
           >
             -
           </Button>

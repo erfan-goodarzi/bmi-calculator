@@ -7,89 +7,66 @@ import "react-circular-progressbar/dist/styles.css";
 import CalButton from "../container/material ui/CalButton";
 import BmiModal from "../container/material ui/Modal";
 
+//redux import
+import { useSelector } from "react-redux";
+
 export default function BmiBox({ gender }) {
-  const [age, setAge] = useState(23);
-  const [Weight, setWeight] = useState(69);
-  const [Height, setHeight] = useState(175);
+  const BmiAge = useSelector((state) => state.bmi.age);
+  const BmiWeight = useSelector((state) => state.bmi.weight);
+  const BmiHeight = useSelector(state => state.bmi.height);
   const infoRef = useRef(22.53);
   const [sug, setSug] = useState(null);
   const [sugBmi, setSugBmi] = useState();
   const [ShowsugBmi, setShowSugBmi] = useState(false);
 
-  const GetHeight = (e) => {
-    setHeight(e.target.value);
-  };
+  
 
-  const WeightIncrementHandler = () => {
-    if (Weight < 300) {
-      setWeight(Weight + 1);
-    }
-  };
-
-  const WeightDecrementHandler = () => {
-    if (Weight > 10) {
-      setWeight(Weight - 1);
-    }
-  };
-
-  infoRef.current = (Weight / ((Height * Height) / 10000)).toFixed(1);
-
-  const AgeIncrementHandler = () => {
-    if (age < 100) {
-      setAge(age + 1);
-    }
-  };
-
-  const AgeDecrementHandler = () => {
-    if (age > 5) {
-      setAge(age - 1);
-    }
-  };
+  infoRef.current = (BmiWeight / ((BmiHeight * BmiHeight) / 10000)).toFixed(1);
 
   const BmiSuggestions = () => {
-    setShowSugBmi(true)
+    setShowSugBmi(true);
     const bmi = infoRef.current;
-    if (age <= 18) {
+    if (BmiAge <= 18) {
       setSug(<Box>Your bmi is {bmi}</Box>);
-    } else if (age >= 19 && age <= 24) {
+    } else if (BmiAge >= 19 && BmiAge <= 24) {
       setSug(
         <Box>
-          Your bmi is {bmi} , The ideal bmi for your age({age}) is between 19
+          Your bmi is {bmi} , The ideal bmi for your age({BmiAge}) is between 19
           and 24.
         </Box>
       );
-    } else if (age >= 25 && age <= 34) {
+    } else if (BmiAge >= 25 && BmiAge <= 34) {
       setSug(
         <Box>
-          Your bmi is {bmi} , The ideal bmi for your age({age}) is between 20
+          Your bmi is {bmi} , The ideal bmi for your age({BmiAge}) is between 20
           and 25.
         </Box>
       );
-    } else if (age >= 35 && age <= 44) {
+    } else if (BmiAge >= 35 && BmiAge <= 44) {
       setSug(
         <Box>
-          Your bmi is {bmi} , The ideal bmi for your age({age}) is between 21
+          Your bmi is {bmi} , The ideal bmi for your age({BmiAge}) is between 21
           and 26.
         </Box>
       );
-    } else if (age >= 45 && age <= 54) {
+    } else if (BmiAge >= 45 && BmiAge <= 54) {
       setSug(
         <Box>
-          Your bmi is {bmi} , The ideal bmi for your age({age}) is between 22
+          Your bmi is {bmi} , The ideal bmi for your age({BmiAge}) is between 22
           and 27.
         </Box>
       );
-    } else if (age >= 55 && age <= 64) {
+    } else if (BmiAge >= 55 && BmiAge <= 64) {
       setSug(
         <Box>
-          Your bmi is {bmi} , The ideal bmi for your age({age}) is between 23
+          Your bmi is {bmi} , The ideal bmi for your age({BmiAge}) is between 23
           and 28.
         </Box>
       );
     } else {
       setSug(
         <Box>
-          Your bmi is {bmi} , The ideal bmi for your age({age}) is between 24
+          Your bmi is {bmi} , The ideal bmi for your age({BmiAge}) is between 24
           and 29.
         </Box>
       );
@@ -99,7 +76,10 @@ export default function BmiBox({ gender }) {
     if (bmi < 18.5) {
       setSugBmi(
         <Box>
-         If, after calculating BMI, the number obtained is less than 18.5, it means that you are underweight. In this case, there is a referral to a nutritionist to prevent the weakening of the body. As harmful as obesity is, extreme weight loss can be serious.
+          If, after calculating BMI, the number obtained is less than 18.5, it
+          means that you are underweight. In this case, there is a referral to a
+          nutritionist to prevent the weakening of the body. As harmful as
+          obesity is, extreme weight loss can be serious.
         </Box>
       );
     } else if (bmi >= 18.5 && bmi <= 24.9) {
@@ -120,7 +100,7 @@ export default function BmiBox({ gender }) {
           steps to control and prevent weight gain.
         </Box>
       );
-    } else if (age >= 30 && age <= 34) {
+    } else if (BmiAge >= 30 && BmiAge <= 34) {
       setSugBmi(
         <Box>
           By calculating BMI, the number obtained, if it is higher than 30,
@@ -171,24 +151,16 @@ export default function BmiBox({ gender }) {
         <Box>
           <Box sx={{ display: "flex", mt: "40px" }}>
             <Box>
-              <HeightBox height={Height} HeightHandler={GetHeight} />
+              <HeightBox />
             </Box>
             <Box sx={{ display: "grid" }}>
               <Box>
                 {" "}
-                <AgeBox
-                  age={age}
-                  AgeIncrementHandler={AgeIncrementHandler}
-                  AgeDecrementHandler={AgeDecrementHandler}
-                />
+                <AgeBox />
               </Box>
               <Box>
                 {" "}
-                <WeightBox
-                  Weight={Weight}
-                  WeightIncrementHandler={WeightIncrementHandler}
-                  WeightDecrementHandler={WeightDecrementHandler}
-                />
+                <WeightBox />
               </Box>
             </Box>
           </Box>
@@ -248,7 +220,14 @@ export default function BmiBox({ gender }) {
             })}
           />
         </Box>
-        <Box sx={{ textAlign: "center", fontSize: "17px", fontWeight: "500" , marginTop: '-22px'}}>
+        <Box
+          sx={{
+            textAlign: "center",
+            fontSize: "17px",
+            fontWeight: "500",
+            marginTop: "-22px",
+          }}
+        >
           You have{" "}
           <span style={{ fontWeight: "700", color: "#4fcde0" }}>
             {infoRef.current <= 16
@@ -278,26 +257,27 @@ export default function BmiBox({ gender }) {
         >
           {sug}
         </Box>
-        {ShowsugBmi ?    <Box
-          sx={{
-            width: "78%",
-            textAlign: "center",
-            background: "#dadfe6",
-            fontSize: "16px",
-            fontWeight: "400",
-            margin: "19px 29px",
-            padding: "8px 14px",
-            boxShadow:
-              "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
-            borderRadius: "13px",
-            textTransform: 'lowercase !important',
-            lineHeight:'1.5',
-
-          }}
-        >
-          {sugBmi}
-        </Box> : null}
-        <BmiModal/>
+        {ShowsugBmi ? (
+          <Box
+            sx={{
+              width: "78%",
+              textAlign: "center",
+              background: "#dadfe6",
+              fontSize: "16px",
+              fontWeight: "400",
+              margin: "19px 29px",
+              padding: "8px 14px",
+              boxShadow:
+                "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
+              borderRadius: "13px",
+              textTransform: "lowercase !important",
+              lineHeight: "1.5",
+            }}
+          >
+            {sugBmi}
+          </Box>
+        ) : null}
+        <BmiModal />
       </Box>
     </Box>
   );
