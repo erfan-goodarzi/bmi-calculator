@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo 
+This project is deployed on netlify and you can check the example [here](https://nervous-roentgen-f3610a.netlify.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
