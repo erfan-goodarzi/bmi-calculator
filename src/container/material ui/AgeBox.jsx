@@ -1,8 +1,7 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-
-export const AgeBox = props => {
+export const AgeBox = (props) => {
   return (
     <div>
       <Box
@@ -13,9 +12,8 @@ export const AgeBox = props => {
           color: "#6799b0",
           background: " #EDEDED",
           boxShadow: "3px 5px 7px 1px #908d9e80, -4px -2px 6px 2px #ffffff",
-          height: "26vh",
-        }}
-      >
+          height: { lg: "26vh", md: "16vh" },
+        }}>
         <Box
           sx={{
             fontSize: "16px",
@@ -24,8 +22,7 @@ export const AgeBox = props => {
             fontWeight: "500",
             pt: "16px",
             mb: 1,
-          }}
-        >
+          }}>
           Age
         </Box>
         <Box sx={{ display: "grid" }}>
@@ -45,8 +42,7 @@ export const AgeBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.AgeIncrementHandler}
-          >
+            onClick={props.AgeIncrementHandler}>
             +
           </Button>
           <Button
@@ -55,8 +51,7 @@ export const AgeBox = props => {
               fontWeight: "700",
               color: "#59c7e2 !important",
             }}
-            disabled
-          >
+            disabled>
             {props.age}
           </Button>
           <Button
@@ -75,8 +70,7 @@ export const AgeBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.AgeDecrementHandler}
-          >
+            onClick={props.AgeDecrementHandler}>
             -
           </Button>
         </Box>
@@ -85,7 +79,7 @@ export const AgeBox = props => {
   );
 };
 
-export const WeightBox = props => {
+export const WeightBox = (props) => {
   return (
     <div>
       <Box
@@ -96,9 +90,8 @@ export const WeightBox = props => {
           color: "#6799b0",
           background: " #EDEDED",
           boxShadow: "3px 5px 7px 1px #908d9e80, -4px -2px 6px 2px #ffffff",
-          height: "26vh",
-        }}
-      >
+          height: { lg: "26vh", md: "16vh" },
+        }}>
         <Box
           sx={{
             fontSize: "16px",
@@ -107,8 +100,7 @@ export const WeightBox = props => {
             fontWeight: "500",
             pt: "16px",
             mb: 1,
-          }}
-        >
+          }}>
           Weight
         </Box>
         <Box sx={{ display: "grid" }}>
@@ -128,8 +120,7 @@ export const WeightBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.WeightIncrementHandler}
-          >
+            onClick={props.WeightIncrementHandler}>
             +
           </Button>
           <Button
@@ -138,8 +129,7 @@ export const WeightBox = props => {
               fontWeight: "700",
               color: "#59c7e2 !important",
             }}
-            disabled
-          >
+            disabled>
             {props.Weight}
           </Button>
           <Button
@@ -158,8 +148,7 @@ export const WeightBox = props => {
                 color: "#56CFDB",
               },
             }}
-            onClick={props.WeightDecrementHandler}
-          >
+            onClick={props.WeightDecrementHandler}>
             -
           </Button>
         </Box>
@@ -167,4 +156,3 @@ export const WeightBox = props => {
     </div>
   );
 };
-

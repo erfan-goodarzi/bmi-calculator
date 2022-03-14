@@ -56,8 +56,8 @@ const BmiModal = () => {
       >
         <TableContainer
           sx={{
-            margin: "6rem 35rem",
-            width: "30%",
+            margin: {lg: "6rem 35rem", md: "7rem 8rem"},
+            width: {lg: "30%", md: "47%"},
             boxShadow:
               "5px 5px 18px 5px #908d9e52, -1px -6px 20px 3px #ffffff59",
             backgroundColor: "#EDEDED !important",

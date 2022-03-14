@@ -47,7 +47,7 @@ export default function BmiBox({ gender }) {
   };
 
   const BmiSuggestions = () => {
-    setShowSugBmi(true)
+    setShowSugBmi(true);
     const bmi = infoRef.current;
     if (age <= 18) {
       setSug(<Box>Your bmi is {bmi}</Box>);
@@ -99,7 +99,10 @@ export default function BmiBox({ gender }) {
     if (bmi < 18.5) {
       setSugBmi(
         <Box>
-         If, after calculating BMI, the number obtained is less than 18.5, it means that you are underweight. In this case, there is a referral to a nutritionist to prevent the weakening of the body. As harmful as obesity is, extreme weight loss can be serious.
+          If, after calculating BMI, the number obtained is less than 18.5, it
+          means that you are underweight. In this case, there is a referral to a
+          nutritionist to prevent the weakening of the body. As harmful as
+          obesity is, extreme weight loss can be serious.
         </Box>
       );
     } else if (bmi >= 18.5 && bmi <= 24.9) {
@@ -144,27 +147,26 @@ export default function BmiBox({ gender }) {
   };
 
   return (
-    <Box sx={{ display: "flex", mt: 4 }}>
+    <Box sx={{ display: { lg: "flex", md: "block" }, mt: 4 }}>
       <Box
         sx={{
           width: 383,
-          marginLeft: "21rem",
+          marginLeft: {lg: "21rem", md:  "11rem"},
           marginRight: "-10rem",
           borderRadius: "14px",
           color: "#6799b0",
           background: " #EDEDED",
           boxShadow: "5px 5px 49px #a1b1b6, -5px -5px 49px #ffffff",
-          height: "92vh",
-        }}
-      >
+            height:{ lg: "92vh", md: "53vh"},
+        }}>
         <Box
           sx={{
             fontFamily: "Nunito",
             fontSize: "19px",
             textAlign: "center",
             mt: "31px",
-          }}
-        >
+            pt: {lg: 0,md: 3}
+          }}>
           BMI CALCULATOR
         </Box>
         <Box>{gender}</Box>
@@ -201,23 +203,22 @@ export default function BmiBox({ gender }) {
       <Box
         sx={{
           width: 383,
-          marginLeft: "21rem",
+          marginLeft: {lg: "21rem", md:  "11rem"},
           marginRight: "-10rem",
           borderRadius: "14px",
           color: "#6799b0",
           background: " #EDEDED",
           boxShadow: "5px 5px 49px #a1b1b6, -5px -5px 49px #ffffff",
-          height: "92vh",
-        }}
-      >
+          height:{ lg: "92vh", md: "50vh"},
+        }}>
         <Box
           sx={{
             fontFamily: "Nunito",
             fontSize: "19px",
             textAlign: "center",
             mt: "31px",
-          }}
-        >
+            pt: {lg: 0,md: 3}
+          }}>
           BMI RESULT
         </Box>
         <Box
@@ -230,8 +231,7 @@ export default function BmiBox({ gender }) {
             boxShadow:
               "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
             height: 176,
-          }}
-        >
+          }}>
           <CircularProgressbar
             maxValue={40}
             ref={infoRef}
@@ -248,7 +248,13 @@ export default function BmiBox({ gender }) {
             })}
           />
         </Box>
-        <Box sx={{ textAlign: "center", fontSize: "17px", fontWeight: "500" , marginTop: '-22px'}}>
+        <Box
+          sx={{
+            textAlign: "center",
+            fontSize: "17px",
+            fontWeight: "500",
+            marginTop: "-22px",
+          }}>
           You have{" "}
           <span style={{ fontWeight: "700", color: "#4fcde0" }}>
             {infoRef.current <= 16
@@ -274,30 +280,29 @@ export default function BmiBox({ gender }) {
             fontSize: "16px",
             fontWeight: "400",
             margin: " 23px 41px",
-          }}
-        >
+          }}>
           {sug}
         </Box>
-        {ShowsugBmi ?    <Box
-          sx={{
-            width: "78%",
-            textAlign: "center",
-            background: "#dadfe6",
-            fontSize: "16px",
-            fontWeight: "400",
-            margin: "19px 29px",
-            padding: "8px 14px",
-            boxShadow:
-              "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
-            borderRadius: "13px",
-            textTransform: 'lowercase !important',
-            lineHeight:'1.5',
-
-          }}
-        >
-          {sugBmi}
-        </Box> : null}
-        <BmiModal/>
+        {ShowsugBmi ? (
+          <Box
+            sx={{
+              width: "78%",
+              textAlign: "center",
+              background: "#dadfe6",
+              fontSize: "16px",
+              fontWeight: "400",
+              margin: "19px 29px",
+              padding: "8px 14px",
+              boxShadow:
+                "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
+              borderRadius: "13px",
+              textTransform: "lowercase !important",
+              lineHeight: "1.5",
+            }}>
+            {sugBmi}
+          </Box>
+        ) : null}
+        <BmiModal />
       </Box>
     </Box>
   );
