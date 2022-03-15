@@ -31,7 +31,7 @@ const BmiModal = () => {
         onClick={handleOpen}
         sx={{
           background: "linear-gradient(85deg, #3bcaed, #56cedc)",
-          margin: "2px 8rem",
+          margin: { lg: "2px 8rem", sm: "0rem 6rem" },
           padding: "8px 46px",
           border: "none",
           transition: "all 0.2s ease-in-out",
@@ -44,26 +44,23 @@ const BmiModal = () => {
           "&:hover": {
             color: "#3f6b88",
           },
-        }}
-      >
+        }}>
         Details
       </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        aria-describedby="modal-modal-description">
         <TableContainer
           sx={{
-            margin: {lg: "6rem 35rem", md: "7rem 8rem"},
-            width: {lg: "30%", md: "47%"},
+            margin: { lg: "6rem 35rem", md: "7rem 8rem" },
+            width: { lg: "30%", md: "47%" },
             boxShadow:
               "5px 5px 18px 5px #908d9e52, -1px -6px 20px 3px #ffffff59",
             backgroundColor: "#EDEDED !important",
           }}
-          component={Paper}
-        >
+          component={Paper}>
           <Table sx={{ minWidth: 460 }} aria-label="simple table">
             <TableBody>
               {rows.map((row) => (
@@ -71,36 +68,30 @@ const BmiModal = () => {
                   key={row.normal}
                   sx={{
                     "&:last-child td, &:last-child th": { border: 0 },
-                  }}
-                >
+                  }}>
                   <TableCell
                     sx={{ padding: "17px 1px", textAlign: "center" }}
-                    align="right"
-                  >
+                    align="right">
                     {row.severeThinness}
                   </TableCell>
                   <TableCell
                     sx={{ padding: "17px 1px", textAlign: "center" }}
-                    align="right"
-                  >
+                    align="right">
                     {row.thinness}
                   </TableCell>
                   <TableCell
                     sx={{ padding: "17px 1px", textAlign: "center" }}
-                    align="right"
-                  >
+                    align="right">
                     {row.normal}
                   </TableCell>
                   <TableCell
                     sx={{ padding: "17px 1px", textAlign: "center" }}
-                    align="right"
-                  >
+                    align="right">
                     {row.Overweight}
                   </TableCell>
                   <TableCell
                     sx={{ padding: "17px 1px", textAlign: "center" }}
-                    align="right"
-                  >
+                    align="right">
                     {row.Obese}
                   </TableCell>
                 </TableRow>

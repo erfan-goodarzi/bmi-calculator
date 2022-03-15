@@ -11,7 +11,7 @@ export default function SelectGender() {
   };
 
   return (
-    <Box sx={{ margin: " 2rem 1rem", width: "100%" }}>
+    <Box sx={{ margin: {lg: "2rem 1rem", sm: "1rem 1rem"}, width: "100%" }}>
       <ToggleButtonGroup
       color="warning"
       value={isAvtive}
@@ -23,7 +23,7 @@ export default function SelectGender() {
           sx={{
             background: "linear-gradient(45deg, #59C7E2, #56CFDB)",
             margin: "6px 9px",
-            padding: "10px 56px",
+            padding: {lg: "10px 56px", sm: "10px 45px"},
             border: 'none',
             transition: 'all 0.2s ease-in-out',
             fontSize: "14px",
@@ -41,7 +41,7 @@ export default function SelectGender() {
          value="Female"
           sx={{
             background: "#EDEDED",
-            padding: "10px 53px",
+            padding: {lg: "10px 53px", sm: "10px 45px"},
             border: 'none',
             transition: 'all 0.2s ease-in-out',
             margin: "6px 20px !important",
