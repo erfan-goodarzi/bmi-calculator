@@ -6,13 +6,13 @@ export const AgeBox = (props) => {
     <div>
       <Box
         sx={{
-          width: { lg: 151, sm: 139 },
+          width: { lg: 151, sm: 139, xs: 139 },
           margin: "-16px 12px 38px 5px",
           borderRadius: "14px",
           color: "#6799b0",
           background: " #EDEDED",
           boxShadow: "3px 5px 7px 1px #908d9e80, -4px -2px 6px 2px #ffffff",
-          height: { lg: "26vh", md: "16vh", sm: "16vh" },
+          height: { lg: "26vh", md: "16vh", sm: "16vh", xs: "27vh" },
         }}>
         <Box
           sx={{
@@ -30,7 +30,7 @@ export const AgeBox = (props) => {
             sx={{
               minWidth: "13px",
               width: 36,
-              margin: { lg: "5px 55px", sm: "-5px 51px" },
+              margin: { lg: "5px 55px", sm: "-5px 51px", xs: "-1px 51px" },
               background: "#EDEDED",
               fontSize: "19px",
               fontWeight: "800",
@@ -58,7 +58,7 @@ export const AgeBox = (props) => {
             sx={{
               minWidth: "13px",
               width: 36,
-              margin: { lg: "5px 55px", sm: "-5px 51px" },
+              margin: { lg: "5px 55px", sm: "-5px 51px", xs: "-1px 51px" },
               background: "#EDEDED",
               fontSize: "19px",
               fontWeight: "800",
@@ -90,7 +90,7 @@ export const WeightBox = (props) => {
           color: "#6799b0",
           background: " #EDEDED",
           boxShadow: "3px 5px 7px 1px #908d9e80, -4px -2px 6px 2px #ffffff",
-          height: { lg: "26vh", md: "16vh", sm: "16vh" },
+          height: { lg: "26vh", md: "16vh", sm: "16vh", xs: "27vh" },
         }}>
         <Box
           sx={{
@@ -108,7 +108,7 @@ export const WeightBox = (props) => {
             sx={{
               minWidth: "13px",
               width: 36,
-              margin: { lg: "5px 55px", sm: "-5px 51px" },
+              margin: { lg: "5px 55px", sm: "-5px 51px", xs: "-1px 51px" },
               background: "#EDEDED",
               fontSize: "19px",
               fontWeight: "800",
@@ -136,7 +136,7 @@ export const WeightBox = (props) => {
             sx={{
               minWidth: "13px",
               width: 36,
-              margin: { lg: "5px 55px", sm: "-5px 51px" },
+              margin: { lg: "5px 55px", sm: "-5px 51px", xs: "-1px 51px" },
               background: "#EDEDED",
               fontSize: "19px",
               fontWeight: "800",

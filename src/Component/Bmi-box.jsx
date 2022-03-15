@@ -147,12 +147,21 @@ export default function BmiBox({ gender }) {
   };
 
   return (
-    <Box sx={{ display: "flex", mt: 4 }}>
+    <Box
+      sx={{
+        display: { lg: "flex", md: "flex", sm: "flex", xs: "block" },
+        mt: 4,
+      }}>
       <Box
         sx={{
           width: { lg: 383, sm: 334 },
           marginLeft: { lg: "21rem", md: "3rem", sm: "1rem" },
-          marginRight: "-10rem",
+          marginRight: {
+            lg: "-10rem",
+            md: "-10rem",
+            sm: "-10rem",
+            xs: ".5rem",
+          },
           borderRadius: "14px",
           color: "#6799b0",
           background: " #EDEDED",
@@ -165,7 +174,7 @@ export default function BmiBox({ gender }) {
             fontSize: "19px",
             textAlign: "center",
             mt: "31px",
-            pt: { lg: 0, md: 3 },
+            pt: { lg: 0, md: 3, xs: 1 },
           }}>
           BMI CALCULATOR
         </Box>
@@ -204,12 +213,17 @@ export default function BmiBox({ gender }) {
         sx={{
           width: { lg: 383, sm: 334 },
           marginLeft: { lg: "21rem", md: "16rem", sm: "13rem" },
-          marginRight: "-10rem",
+          marginRight: {
+            lg: "-10rem",
+            md: "-10rem",
+            sm: "-10rem",
+            xs: ".5rem",
+          },
           borderRadius: "14px",
           color: "#6799b0",
           background: " #EDEDED",
           boxShadow: "5px 5px 49px #a1b1b6, -5px -5px 49px #ffffff",
-          height: { lg: "92vh", md: "53vh", sm: "60vh" },
+          height: { lg: "92vh", md: "53vh", sm: "60vh", xs: "84vh" },
         }}>
         <Box
           sx={{
@@ -217,19 +231,25 @@ export default function BmiBox({ gender }) {
             fontSize: "19px",
             textAlign: "center",
             mt: "31px",
-            pt: { lg: 0, md: 3 },
+            pt: { lg: 0, md: 3, xs: 1 },
           }}>
           BMI RESULT
         </Box>
         <Box
           sx={{
             width: { lg: 176, sm: 145 },
-            margin: { lg: "32px 24px 49px 107px", sm: "7px 0px 36px 92px" },
+            margin: {
+              lg: "32px 24px 49px 107px",
+              sm: "7px 0px 36px 92px",
+              xs: "11px 101px 41px 91px",
+            },
             borderRadius: "50%",
             color: "#6799b0",
             background: " #EDEDED",
-            boxShadow:
-              "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
+            boxShadow: {
+              lg: "9px 6px 18px 5px #908d9e52, -10px -9px 20px 7px #ffffff",
+              xs: "noen",
+            },
             height: { lg: 176, sm: 146 },
           }}>
           <CircularProgressbar
@@ -289,7 +309,7 @@ export default function BmiBox({ gender }) {
               width: "78%",
               textAlign: "center",
               background: "#dadfe6",
-              fontSize: { lg: "16px", sm: "14px" },
+              fontSize: { lg: "16px", sm: "14px", xs: "13px" },
               fontWeight: "400",
               margin: "19px 29px",
               padding: "8px 14px",

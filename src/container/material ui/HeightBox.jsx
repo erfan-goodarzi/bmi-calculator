@@ -11,7 +11,7 @@ export default function HeightBox({ height, HeightHandler }) {
         color: "#6799b0",
         background: " #EDEDED",
         boxShadow: "3px 5px 7px 1px #908d9e80, -4px -2px 6px 2px #ffffff",
-        height: { lg: "55vh", md: "34vh", sm: "34vh" },
+        height: { lg: "55vh", md: "34vh", sm: "34vh", xs: "57vh" },
       }}>
       <Box
         sx={{
@@ -27,7 +27,7 @@ export default function HeightBox({ height, HeightHandler }) {
         sx={{
           height: "82%",
           width: "5px",
-          padding: { lg: "0px 70px", md: "0px 72px", sm: "0px 54px" },
+          padding: { lg: "0px 70px", md: "0px 72px", sm: "0px 54px", xs: "0px 63px" },
           marginTop: "8px",
           color: "#b8b7be",
         }}

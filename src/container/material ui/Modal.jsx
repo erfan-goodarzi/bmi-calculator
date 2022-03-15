@@ -31,7 +31,7 @@ const BmiModal = () => {
         onClick={handleOpen}
         sx={{
           background: "linear-gradient(85deg, #3bcaed, #56cedc)",
-          margin: { lg: "2px 8rem", sm: "0rem 6rem" },
+          margin: { lg: "2px 8rem", sm: "0rem 6rem", xs: "0 7rem" },
           padding: "8px 46px",
           border: "none",
           transition: "all 0.2s ease-in-out",
